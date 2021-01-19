@@ -1,0 +1,340 @@
+/* ---COLORS--- */
+/*$red: #BD6D74; $dark-red: #A94C54;$yellow: #DE9945*/
+/* ---HTML---- */
+body, main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  margin: 0px;
+  padding: 0px;
+  background: #20202E;
+  text-align: center;
+  font-family: 'Merriweather', Light 300;
+  line-height: 1.25em;
+}
+
+/* ---HEADER--- */
+/* The text highlight in the header is from Steven Roberts → https://codepen.io/matchboxhero/pen/XeEYyy */
+header {
+  font-family: 'Alike', cursive;
+  color: white;
+  font-size: 1.3rem;
+  line-height: 2em;
+}
+
+.highlight {
+  display: inline-block;
+  color: white;
+  -webkit-transition: color 250ms, text-shadow 250ms;
+  transition: color 250ms, text-shadow 250ms;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px white;
+  position: relative;
+  z-index: 0;
+}
+
+.highlight::after {
+  position: absolute;
+  z-index: -1;
+  bottom: -1px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #433BA6;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+}
+
+.highlight:hover {
+  color: white;
+  text-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.highlight:hover::after {
+  height: 102.5%;
+  width: 102.5%;
+}
+
+/* ---FORM--- */
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1.2rem;
+  width: 45%;
+  /* max/min values */
+  min-width: 300px;
+  border: 10px;
+  border-radius: 0.5rem;
+  padding: 1.9rem;
+  background-color: #f4f4f4;
+  color: #20202E;
+  text-align: left;
+}
+
+div {
+  margin-bottom: 1.2rem;
+}
+
+.label {
+  font-family: 'Alike', cursive;
+  font-size: 1rem;
+}
+
+/* Input */
+.input {
+  width: 100%;
+  height: 20px;
+  border: 2px solid #8E8EA4;
+  border-radius: 0.3rem;
+  color: #20202E;
+  background: #f4f4f4;
+}
+
+.input:focus {
+  border: 2.5px solid #433BA6;
+}
+
+/* Select */
+#dropdown {
+  height: 25px;
+  border: 2px solid #8E8EA4;
+  border-radius: 0.3rem;
+  width: 11rem;
+  color: #111118;
+  background: #f4f4f4;
+  cursor: pointer;
+}
+
+#dropdown:focus {
+  border: 2.5px solid #433BA6;
+}
+
+/* Radio buttons */
+.radiobt {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radiobt input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.choicemark {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  height: 16px;
+  width: 16px;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  border: 1px solid #20202E;
+}
+
+.radiobt:hover input ~ .choicemark {
+  background-color: #ccc;
+  border: 1.25px solid #433BA6;
+}
+
+.radiobt input:checked ~ .choicemark {
+  background-color: #433BA6;
+  border: 1px solid #433BA6;
+}
+
+.choicemark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radiobt input:checked ~ .choicemark:after {
+  display: block;
+}
+
+.radiobt .choicemark:after {
+  left: 4px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f4f4f4;
+}
+
+/* Checkboxes */
+/* Griddy time */
+#checkbox-label {
+  grid-area: cl;
+}
+
+#t {
+  grid-area: t;
+}
+
+#h {
+  grid-area: h;
+}
+
+#c {
+  grid-area: c;
+}
+
+#r {
+  grid-area: r;
+}
+
+#checkboxes {
+  display: -ms-grid;
+  display: grid;
+  grid-template: "cl cl cl cl" auto
+ "t h c r" auto;
+  -ms-grid-columns: (auto, 4);
+      grid-template-columns: repeat(4, auto);
+}
+
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  padding-bottom: 2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 14px;
+  width: 14px;
+  border: 1.75px solid #20202E;
+  background-color: #f4f4f4;
+}
+
+.checkbox:hover input ~ .checkmark {
+  border: 1.75px solid #433BA6;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox .checkmark:after {
+  left: 3.5px;
+  top: 0.5px;
+  width: 5px;
+  height: 8px;
+  border: solid #433BA6;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Comment*/
+#comment {
+  width: 100%;
+  min-height: 75px;
+  border: 2px solid #8E8EA4;
+  resize: vertical;
+  color: #111118;
+  font-size: 0.85rem;
+}
+
+#comment:focus {
+  border: 2.5px solid #433BA6;
+}
+
+/*Button */
+#submit {
+  width: 300px;
+  height: 2rem;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  margin: 0 -150px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  background-color: #433BA6;
+  color: white;
+}
+
+#submit:hover {
+  background-color: #363088;
+}
+
+/* FOOTER*/
+footer {
+  background: #111118;
+  font-size: 0.8rem;
+  color: white;
+  line-height: 6px;
+  padding: 1.2rem;
+}
+
+a {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: #433BA6;
+}
+
+/* Media and responsive */
+/* #Cheat */
+@media only screen and (max-width: 500px) {
+  #checkboxes {
+    display: -ms-grid;
+    display: grid;
+    grid-template: "cl cl" auto
+ "t h" auto
+ "c r" auto;
+    -ms-grid-columns: (auto, 2);
+        grid-template-columns: repeat(2, auto);
+  }
+}
+/*# sourceMappingURL=style.css.map */

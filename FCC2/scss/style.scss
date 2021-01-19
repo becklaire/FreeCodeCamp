@@ -1,0 +1,315 @@
+/* ---COLORS--- */
+$purple: #433BA6;
+$dark-purple: #363088;
+/*$red: #BD6D74; $dark-red: #A94C54;$yellow: #DE9945*/
+$dark: #20202E;
+$black: #111118;
+$grey: #8E8EA4;
+$trans: #f4f4f4;
+
+/* ---HTML---- */
+body, main{
+	display: flex;
+  flex-direction: column;
+  align-content: stretch;
+	margin: 0px;
+  padding: 0px;
+	
+	background: $dark;
+	
+	text-align: center;
+	font-family: 'Merriweather', Light 300;
+	line-height: 1.25em;
+}
+
+/* ---HEADER--- */
+/* The text highlight in the header is from Steven Roberts → https://codepen.io/matchboxhero/pen/XeEYyy */
+header {
+	font-family: 'Alike', cursive;
+	color: white;
+	font-size: 1.3rem;
+	line-height: 2em;
+}
+.highlight{
+		display: inline-block;
+		color: white;
+		transition: color 250ms, text-shadow 250ms;
+		text-decoration: none;
+		text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+		
+		position: relative;
+		z-index: 0;
+	
+		&::after {
+			position: absolute;
+			z-index: -1;
+			bottom: -1px;
+			left: 50%;
+			transform: translateX(-50%);
+			content: '';
+			width: 100%;
+			height: 3px;
+			background-color: $purple;
+			transition: all 250ms;
+		}
+	
+		&:hover {
+			color: white;
+			text-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.5);
+			
+		&::after {
+				height: 102.5%;
+				width: 102.5%;
+			}
+		}
+	}
+
+/* ---FORM--- */
+form {
+  display: flex;
+	align-self: center;
+  flex-direction: column;
+	margin-bottom: 1.2rem;
+	
+	width: 45%; /* max/min values */
+	min-width: 300px;
+	border: 10px;
+	border-radius: 0.5rem;
+	padding: 1.9rem;
+	
+	background-color: $trans;
+	
+	color: $dark;
+	text-align: left;
+}
+
+div{
+	margin-bottom: 1.2rem;
+}
+
+.label {
+	font-family: 'Alike', cursive;
+	font-size: 1rem;
+}
+/* Input */
+.input{
+	width: 100%;
+	height: 20px;
+	border: 2px solid $grey;
+	border-radius: 0.3rem;
+	
+	color: $dark;
+	background: $trans;
+	
+	&:focus{
+		border: 2.5px solid $purple;
+	}
+}
+
+/* Select */
+#dropdown {
+	height: 25px;
+	border: 2px solid $grey;
+	border-radius: 0.3rem;
+	width: 11rem;
+	
+	color: $black;
+	background: $trans;
+	
+	cursor: pointer;
+
+	&:focus{
+		border: 2.5px solid $purple;
+	}
+}
+
+/* Radio buttons */
+.radiobt {
+  display: block;
+  position: relative;
+	
+  padding-left: 25px;
+  margin-bottom: 3px;
+	
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.radiobt input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.choicemark {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  height: 16px;
+  width: 16px;
+  background-color: $trans;
+  border-radius: 50%;
+	border: 1px solid $dark;
+}
+.radiobt:hover input ~ .choicemark {
+  background-color: #ccc;
+	border: 1.25px solid $purple;
+}
+.radiobt input:checked ~ .choicemark {
+  background-color: $purple;
+	border: 1px solid $purple;
+}
+.choicemark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.radiobt input:checked ~ .choicemark:after {
+  display: block;
+}
+.radiobt .choicemark:after {
+  left: 4px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $trans;
+} 
+
+/* Checkboxes */
+/* Griddy time */
+#checkbox-label{ grid-area: cl;}
+#t{ grid-area: t;}
+#h{ grid-area: h;}
+#c{ grid-area: c;}
+#r{ grid-area: r;}
+#checkboxes{
+	display: grid;
+	grid-template:
+		"cl cl cl cl" auto
+		"t h c r" auto;		
+	grid-template-columns: repeat(4, auto);
+}
+.checkbox{
+	display: block;
+  position: relative;
+	
+	padding-left: 25px;
+	padding-bottom: 2px;
+	
+	-webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 14px;
+  width: 14px;
+	border: 1.75px solid $dark;
+  background-color: $trans;
+}
+.checkbox:hover input ~ .checkmark {
+  border: 1.75px solid $purple;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.checkbox .checkmark:after {
+  left: 3.5px;
+  top: 0.5px;
+  width: 5px;
+  height: 8px;
+  border: solid $purple;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Comment*/
+#comment{
+	width: 100%;
+	min-height: 75px;
+	border: 2px solid $grey;
+	resize: vertical;
+	color: $black;
+	
+	font-size: 0.85rem;
+	
+	&:focus{
+		border: 2.5px solid $purple;
+	}
+}
+
+/*Button */
+#submit {
+	width: 300px;
+	height: 2rem;
+	border-radius: 100px;
+	border: none;
+	
+	cursor: pointer;
+	
+	margin: 0 -150px; 
+  position: relative;
+  top:50%; 
+  left:50%;
+	
+	background-color: $purple;
+	color: white;
+	
+	&:hover{
+	background-color: $dark-purple;
+	}
+}
+
+
+/* FOOTER*/
+footer{
+	background: $black;
+	font-size: 0.8rem;
+	color: white;
+	line-height: 6px;
+	padding: 1.2rem;
+}
+a{
+	color:white;
+	
+	&:visited{
+		color: white;
+	}
+	&:hover {
+		color: $purple;
+	}	
+}
+	
+
+/* Media and responsive */
+/* #Cheat */
+@media only screen and (max-width: 500px) {
+	#checkboxes{
+		display: grid;
+		grid-template:
+		"cl cl" auto
+		"t h" auto
+		"c r" auto;
+		grid-template-columns: repeat(2, auto);
+	}
+}

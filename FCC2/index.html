@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Alike&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet"> 
+	<script src="https://kit.fontawesome.com/7fbbe0629a.js" crossorigin="anonymous"></script>
+
+<main id="main">
+	
+	<!-- HEADER -->	
+	<header id="title">
+		<h1>WELCOME HOME,<br> WARRIOR OF LIGHT!</h1>
+		<p id="description">Tell us about your experience in <a class="highlight" href="https://fr.finalfantasyxiv.com/shadowbringers/" target="_blank"><span>FFXIV Shadowbringers</span></a></p>
+	</header>
+	
+	
+	<!-- FORM -->
+	<form id="survey-form">
+		<!-- Name -->
+		<div>
+			<label for="name" id="name-label" class="label">* Name</label><br>
+			<input type="text" id="name" placeholder="Ingame Full Name" class="input" required><br>
+		</div>
+		
+		<!-- Email -->
+		<div>
+			<label for="email" id="email-label" class="label">* Email</label><br>
+			<input type="email" id="email" placeholder="Account Email" class="input" required><br>
+		</div>
+		
+		<!-- Age -->
+		<div>
+			<label for="number" id="number-label" class="label">* Age</label><br>
+			<input type="number" min="18" max="99" id="number" placeholder="16" class="input" required><br>
+		</div>
+		
+		<!-- Dropdown -->
+		<div>
+			<label for="dropdown" id="dropdown-label" class="label">From which Data Center are you from?</label><br>
+			<select id="dropdown">
+				<option value="" disabled selected hidden>Select a server</option>
+    		<option value="1">Elemental</option>
+				<option value="2">Gaia</option>
+				<option value="3">Mana</option>
+				<option value="4">Aether</option>
+				<option value="5">Primal</option>
+				<option value="5">Cristal</option>
+				<option value="6">Chaos</option>
+				<option value="7">Light</option>
+			</select><br>
+		</div>
+		
+		<!-- Radiobuttons -->
+		<div>
+			<label for="gc" id="radio-label" class="label">Of which Grand Compagny are you from?</label><br>
+			<label class="radiobt"><input type="radio" name="GC" value="LIM">
+				The Maelstrom<span class="choicemark"></span></label>
+  		<label class="radiobt"><input type="radio" name="GC" value="ULD">
+				The Immortal Flames<span class="choicemark"></span></label>
+			<label class="radiobt"><input type="radio" name="GC" value="GRI">
+				The Order of the Twin Adder<span class="choicemark"></span></label>
+		</div>
+		
+		<!-- Checkboxes -->
+		<div id="checkboxes">
+			<label id="checkbox-label" class="label">Which type of class do you enjoy playing?</label><br>
+				<div id="t"> <!-- #1 Tanks -->
+					<label class="checkbox">Paladin<input type="checkbox" value="PLD">
+						<span class="checkmark"></span></label>
+					<label class="checkbox">Warrior<input type="checkbox" value="WAR">
+						<span class="checkmark"></span></label>
+					<label class="checkbox">Dark Knight<input type="checkbox" value="DRK">
+						<span class="checkmark"></span></label>
+					<label class="checkbox">Gunbreaker<input type="checkbox" value="PSB">
+					<span class="checkmark"></span></label>
+				</div> <div id="h"> <!-- #2 Heals -->
+					<label class="checkbox">White Mage<input type="checkbox" value="WHM">
+						<span class="checkmark"></span></label>
+					<label class="checkbox">Scholar<input type="checkbox" value="SCH">
+						<span class="checkmark"></span></label>
+					<label class="checkbox">Astrologian<input type="checkbox" value="AST">
+						<span class="checkmark"></span></label>
+				</div><div id="c"> <!-- #3 Melee DPS -->
+					<label class="checkbox">Monk<input type="checkbox" value="MNK">
+						<span class="checkmark"></span></label>
+					<label class="checkbox">Ninja<input type="checkbox" value="NIN">
+						<span class="checkmark"></span></label>
+					<label class="checkbox">Dragoon<input type="checkbox" value="DRG">
+						<span class="checkmark"></span></label>
+					<label class="checkbox">Samurai<input type="checkbox" value="SAM">
+						<span class="checkmark"></span></label>
+				</div><div id="r"> <!-- #4 Range DPS -->
+					<label class="checkbox"><input type="checkbox" value="BRD">Bard
+				<span class="checkmark"></span></label>
+					<label class="checkbox"><input type="checkbox" value="MCH">Machinist
+				<span class="checkmark"></span></label>
+					<label class="checkbox"><input type="checkbox" value="DNS">Dancer
+				<span class="checkmark"></span></label>
+					<label class="checkbox"><input type="checkbox" value="BLM">Black Mage
+				<span class="checkmark"></span></label>
+					<label class="checkbox"><input type="checkbox" value="SMN">Summonner
+				<span class="checkmark"></span></label>
+					<label class="checkbox"><input type="checkbox" value="MGR">Red Mage
+				<span class="checkmark"></span></label>
+					<label class="checkbox"><input type="checkbox" value="BLU">Blue Mage
+				<span class="checkmark"></span></label>
+				</div>
+			</div>
+		
+		<!-- Textarea -->
+		<div>
+			<label for="comment" id="textarea-label" class="label">What do you enjoy within this last extension?</label><br>
+		 	<textarea id="comment" placeholder="Tell us what you think!"></textarea><br>
+		</div>
+		
+		<!-- Submit -->
+		<input type="submit" id="submit" value="Submit">
+	</form>
+	
+	<!-- FOOTER -->
+	<footer id="refs">
+		<a href="https://www.freecodecamp.org/" target="_blank"><i class="fab fa-free-code-camp fa-2x"></i></a>
+		<a href="https://github.com/lekurozifuru" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+		<br>
+		<p>© 2020 Claire Becker</p>
+	</footer>
+
+</main>
+
+</html>
