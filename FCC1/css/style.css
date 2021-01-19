@@ -1,0 +1,40 @@
+main{
+    font-size: 100%;
+    margin: 0px 0px 0px 0px;
+    line-height: 1;
+    text-align: center;
+}
+
+/* MODULES */
+header {
+    padding: 8px;
+    background-color: silver;
+    line-height: 0.8;
+    font-size: 1.25rem;
+}
+
+#img-div{
+    padding: 8px;
+}
+
+#img-caption{
+    padding: 0px;
+    font-size: 0.8rem;
+}
+
+img{
+    max-width: 15%;
+      min-width: 100px;
+      height: auto;
+    /* Responsive elements to add and check */
+}
+
+#list-timeline{
+    line-height: 1.9;
+}
+
+footer {
+    padding: 1px;
+    font-size: 0.9rem;
+    background-color: silver;
+}
