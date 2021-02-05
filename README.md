@@ -1,12 +1,12 @@
-# [WIP] FreeCodeCamp Projects
-Personal FreeCodeCamp projects for the Responsive Web Design Certification. </br>
+## FreeCodeCamp Projects
+Repository listing my projects for the Responsive Web Design Certification from <a href="https://www.freecodecamp.org/">freecodecamp</a>. </br>
 Use of HTML and SCSS, for now at least.
 
-List of the required projects: </br>
-• **Tribute page** </br>
-• **Survey From** </br>
-• Prodcut Landing **[WIP]** </br>
-• Technical Documentation </br>
-• Personal Portfolio Webpage </br> </br>
+Required projects: </br>
+:white_check_mark: **Tribute page** </br>
+:white_check_mark: **Survey From** </br>
+:white_large_square: Prodcut Landing **[WIP]** </br>
+:white_large_square: Technical Documentation </br>
+:white_large_square: Personal Portfolio Webpage </br></br>
 
-Happy Coding o/
+Happy Coding :sparkles:
