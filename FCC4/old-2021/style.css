@@ -1,0 +1,193 @@
+/* --- COLORS --- */
+/* --- HTML --- */
+html {
+  background-color: #FFF;
+  color: #20202E;
+  margin: 0;
+  padding: 2px 5px;
+  /*text-align: center;*/
+  font: Light 16px "Roboto Mono";
+  line-height: 1;
+}
+
+footer, section { /* spacing */
+  text-align: center;
+}
+
+/* --- TYPOGRAPHY --- */
+h1 {
+  font: bold 3.052rem "Roboto Mono";
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2.441rem;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.953rem;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 1.563rem;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+h6 {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+/* --- MEDIA --- */
+@media screen and (min-width: 600px) { /* TODO: mobile and desktop support*/
+  img {
+    max-height: 54px;
+  }
+}
+/* --- HEADER --- */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin: 0 0 5px 0;
+  width: 100%;
+  font: 1rem "Roboto Mono";
+  background: #FFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+}
+#header ul > li {
+  padding: 0 20px;
+  justify-content: right;
+  /*border: 0.9px solid blue;*/
+}
+
+.nav-link {
+  color: #20202E;
+  text-decoration: none;
+}
+
+/* --- MAIN --- */
+.container {
+  width: 100%;
+}
+
+/* HERO */
+#hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://zupimages.net/up/21/05/ihzc.jpg");
+  height: 100%;
+  border-radius: 20px;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#hero #hero-text {
+  top: 50%;
+  left: 50%;
+  padding: 125px 0;
+  line-height: 1.2rem;
+  color: #0172a2;
+}
+#hero #hero-text em {
+  font-style: normal;
+  -webkit-text-decoration: underline solid #FED253;
+          text-decoration: underline solid #FED253;
+}
+
+button {
+  width: 150px;
+  height: 2rem;
+  border-radius: 100px;
+  border: none;
+  margin-top: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #0172a2;
+  color: white;
+}
+button:hover {
+  background-color: #01557A;
+}
+
+/* ABOUT */
+#about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 50px 0;
+}
+
+#about-video iframe {
+  height: 275px;
+  width: 400px;
+}
+
+#about-text { /* Small screen: need to go down*/
+  text-align: left;
+  max-width: 500px;
+}
+#about-text em {
+  font-style: normal;
+  color: #FED253;
+}
+
+/* FEATURES */
+#features #features-attribute {
+  display: flex;
+  /*justify-content: space-between;*/
+  margin: 50px 0;
+}
+#features .attribute {
+  max-width: 500px;
+  margin: 0 auto;
+}
+#features .attribute > img {
+  max-width: 1000px;
+  height: 500px;
+}
+
+/* PRICING */
+#pricing #pricing-option { /* BORDERS */
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+#pricing .option {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* CONTACT */
+#contact {
+  margin: 50px 0;
+}
+
+/* --- FOOTER --- */
+#footer {
+  margin: 25px 0;
+}
+#footer > a {
+  color: #20202E;
+}
+#footer > a:visited {
+  color: #20202E;
+}
+#footer > a:hover {
+  color: #0172a2;
+}/*# sourceMappingURL=style.css.map */
