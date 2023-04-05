@@ -5,6 +5,6 @@ Use of HTML and SCSS mainly (for now at least). <br><br>
 Required projects: </br>
 :white_check_mark: **Tribute page** </br>
 :white_check_mark: **Survey From** </br>
-:white_large_square: Prodcut Landing **[WIP]** </br>
+:white_large_square: Product Landing **[WIP]** </br>
 :white_large_square: Technical Documentation </br>
 :white_large_square: Personal Portfolio Webpage </br></br>
