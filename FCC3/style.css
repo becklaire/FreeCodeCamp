@@ -2,11 +2,11 @@
 TABLE OF CONTENTS:
 1) GENERAL
 		A- Texts
-    B- @Media
+		B- Images
 2) NAV-BAR
-3) ANIMATION
-4) SECTIONS
-5) FOOTER
+3) SECTIONS
+4) FOOTER
+5) MEDIA
 -----------------------------------------------*/
 /*-----------------------------------------------
 1)		GENERAL
@@ -19,29 +19,42 @@ TABLE OF CONTENTS:
   --code-background: #3D3D3D;
   --pink: #C02150;
   --em-background: #E3E6E8;
-  --callout-color: gray;
   --main-font-family: "Roboto", sans-serif;
   --heading-font-family: "Space Mono", monospace;
   --code-font-family: "Space Mono", monospace;
-  --text-height: 1rem;
+  --text-height: 14px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
+html {
   scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  margin: auto;
+  padding: 0;
   font-family: var(--main-font-family);
   font-size: var(--text-height);
   line-height: 1.75;
   color: var(--text-color);
-  height: 100%;
-  width: 100%;
   background-color: var(--nav-background);
+}
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: auto 10% auto 375px;
+  padding-bottom: 2.5rem;
+}
+
+footer {
+  text-align: center;
 }
 
 /*-------------------------------------------
@@ -51,37 +64,30 @@ h1,
 h2,
 h3 {
   font-family: var(--heading-font-family);
-  line-height: 1.3;
-  margin: 3rem 0 1.38rem 0;
+}
+
+h1,
+h2 {
+  color: var(--pink);
 }
 
 h1 {
-  font-size: 1.953rem;
-  color: var(--pink);
+  font-size: 1.5rem;
   text-transform: uppercase;
+  margin: 0 auto 0.75em auto;
 }
 
-h2 {
-  font-size: 1.563rem;
-  color: var(--pink);
-}
-
-h3 {
-  font-size: 1.25rem;
-  padding-left: 2rem;
-}
-
-pre code {
-  font-size: 0.8rem;
+pre {
+  font-size: 0.75rem;
+  white-space: normal;
   font-family: var(--code-font-family);
   color: var(--code-color);
   background-color: var(--code-background);
-  width: 100%;
-  display: block;
   padding: 0.5rem;
-  margin: 0.5rem 0;
-  text-align: left;
-  white-space: normal;
+}
+
+code {
+  white-space: pre-line;
 }
 
 em {
@@ -98,142 +104,76 @@ a {
   font-family: var(--heading-font-family);
   color: var(--text-color);
 }
-
 .nav-link:hover {
-  /* TO DO: Hovering effect */
-  background: rgb(254, 213, 255);
+  color: var(--pink);
 }
 
-ol {
-  margin-left: 25px;
+.callout {
+  border: 1.5px solid var(--pink);
+  border-radius: 5px;
+  padding: 7.5px;
+}
+
+footer {
+  color: var(--heading-color);
+  background-color: var(--code-background);
+  padding-top: 15px;
 }
 
 /*-------------------------------------------
-    2) B- @MEDIA
+    1) B- IMAGES
     -------------------------------------------*/
-@media only screen and (max-width: 1680px) {
-  #main-doc {
-    margin-top: 3%;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  /* Mobile phone option: !WIP */
-  #main-doc {
-    margin-top: 0.5%;
-  }
-  
-  h1,h2{color: yellow;}
-
-  /*.nav-bar {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: flex;
-  }
-  .nav-link{
-    flex-direction: column;
-  }
-  .box-sections {
-    margin:0;
-    width: 100%;
-    border: 3px solid green;*/
+img {
+  height: 66px;
+  margin-bottom: 25px;
 }
 
 /*-----------------------------------------------
 2)		NAV-BAR
 -----------------------------------------------*/
-.nav-bar {
-  position: fixed;
-  margin-left: 25px;
-  width: 325px;
+.navbar {
   min-width: 250px;
-  border: 2px solid red;
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+  z-index: 1;
+  margin: auto;
 }
 
-.header {
-  /*text-align: center;*/
-}
-
-.raspberry {
-  height: 66px;
-  margin: 0 0 1.25rem 0;
-  padding-left: 42%;
-  /*position: relative;*/
-  /*Berry animation #Celeste*/
-  /*animation: berry 4.5s linear .1s infinite;*/
-}
-
-.nav-list {
-  line-height: 2.33;
+ul > li {
   list-style: none;
-}
-
-.sub-list {
-  list-style: none;
-  padding: 0 0 0 1.5rem;
+  text-align: left;
 }
 
 /*-----------------------------------------------
-3)		ANIMATION
------------------------------------------------*/
-@keyframes berry {
-  0% {
-    top: 0px;
-  }
-
-  25% {
-    top: 8px;
-  }
-
-  50% {
-    top: 2px;
-  }
-
-  75% {
-    top: -3px;
-  }
-
-  100% {
-    top: 0px;
-  }
-}
-
-/*-----------------------------------------------
-4)		SECTIONS
+3)		SECTIONS
 -----------------------------------------------*/
 .box-sections {
-  margin-left: 24em;
-  width: 62%;
-  /* TODO: Depends of screen display*/
-  border: 3px solid blue;
+  width: -moz-max-content;
+  width: max-content;
 }
 
-.callout {
-  width: 100%;
-  padding: 10px;
-  margin-top: 30px;
-  border: 1px solid var(--callout-color);
-  border-radius: 7px;
+.main-section {
+  margin-top: 2rem;
 }
 
 /*-----------------------------------------------
-5)		FOOTER
+4)		FOOTER
 -----------------------------------------------*/
-footer {
-  background-color: var(--em-background);
-  text-align: center;
-  margin: 100px 0 0 0;
-  padding: 30px 0 5px 0;
-  /*border: 2px solid rgb(255, 0, 119);*/
+footer > a {
+  color: var(--heading-color);
 }
-
-footer>a {
-  color: var(--text-color);
-}
-
-footer>a:hover {
+footer > a:hover {
   color: var(--pink);
 }
 
-/*# sourceMappingURL=style.css.map */
+/*-----------------------------------------------
+5)		MEDIA
+-----------------------------------------------*/
+@media only screen and (max-width: 815px) {
+  /* For mobile phones: */
+}/*# sourceMappingURL=style.css.map */

@@ -3,10 +3,10 @@ TABLE OF CONTENTS:
 1) GENERAL
 		A- Texts
 		B- Images
-2) MAIN
-3) NAV-BAR
-4) SECTIONS
-5) FOOTER
+2) NAV-BAR
+3) SECTIONS
+4) FOOTER
+5) MEDIA
 -----------------------------------------------*/
 
 /*-----------------------------------------------
@@ -23,17 +23,44 @@ TABLE OF CONTENTS:
     --main-font-family: 'Roboto', sans-serif;
     --heading-font-family: 'Space Mono', monospace;
     --code-font-family: 'Space Mono', monospace;
+    --text-height: 14px;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-main {
-    font-size: 0.9rem;
+body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    margin: auto;
+    padding: 0;
+    
     font-family: var(--main-font-family);
+    font-size: var(--text-height);
+    line-height: 1.75;
+    
     color: var(--text-color);
-    background-color: var(--nav-background);
+    background-color: var(--nav-background);   
+}
+
+main{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    
+    //Rezising needed
+    margin: auto 10% auto 375px;
+    padding-bottom: 2.5rem;
+}
+
+footer{
+    text-align: center;
 }
 
 /*-------------------------------------------
@@ -56,15 +83,15 @@ h1 {
     margin: 0 auto 0.75em auto;
 }
 
-code {
+pre {
     font-size: 0.75rem;
+    white-space:normal;
     font-family: var(--code-font-family);
     color: var(--code-color);
     background-color: var(--code-background);
-    margin: 0 auto 1.5rem auto;
-    /* interet? */
     padding: 0.5rem;
 }
+code {white-space: pre-line;}
 
 em {
     background-color: var(--em-background);
@@ -76,39 +103,53 @@ a {
     text-decoration: none;
 }
 
-ul a {
+.nav-link {
     font-family: var(--heading-font-family);
     color: var(--text-color);
+    &:hover {
+        color: var(--pink);
+    }
 }
+
+.callout {
+    border: 1.5px solid var(--pink);
+    border-radius: 5px;
+    padding: 7.5px;
+}
+
+footer{
+    color: var(--heading-color);
+    background-color: var(--code-background);
+    padding-top: 15px;
+}
+
+/*-------------------------------------------
+    1) B- IMAGES
+    -------------------------------------------*/
+img {
+    //Rezising needed
+    height: 66px;
+    margin-bottom: 25px;
+}
+    
 
 /*-----------------------------------------------
-2)		FLEX
+2)		NAV-BAR
 -----------------------------------------------*/
-.main-container {
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    justify-content: center;
-    width: 80%;
-    gap: 25px;
-    border: 3px solid blue;
-}
-
-[class ^="box-"] {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid red;
-}
-
-/*-----------------------------------------------
-3)		NAV-BAR
------------------------------------------------*/
-.box-nav {
+.navbar {
+    //Rezising needed
     min-width: 250px;
-    /* media?*/
-    width: 350px;
-    flex-shrink: 1;
+    max-width: 350px;
+    width: 100%;
+
     text-align: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+    z-index: 1;
+    margin: auto;
 }
 
 ul>li {
@@ -117,21 +158,36 @@ ul>li {
 }
 
 /*-----------------------------------------------
-4)		SECTIONS
+3)		SECTIONS
 -----------------------------------------------*/
 .box-sections {
-    flex-shrink: 3;
+    //Rezising needed
+    width: max-content;
 }
+.main-section {
+    margin-top: 2rem;
+}
+
 
 /*-----------------------------------------------
 4)		FOOTER
 -----------------------------------------------*/
 footer {
     >a {
-        color: var(--text-color);
+        color: var(--heading-color);
 
         &:hover {
             color: var(--pink);
         }
     }
+}
+
+/*-----------------------------------------------
+5)		MEDIA
+-----------------------------------------------*/
+@media only screen and (max-width: 815px) {
+    /* For mobile phones: */
+    //Rezising needed
+    //Nav bar mainly
+    //Text and general information
 }

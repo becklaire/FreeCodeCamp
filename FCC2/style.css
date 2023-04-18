@@ -1,28 +1,23 @@
+@charset "UTF-8";
 /* ---COLORS--- */
 /*$red: #BD6D74; $dark-red: #A94C54;$yellow: #DE9945*/
 /* ---HTML---- */
 body, main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  flex-direction: column;
+  align-content: stretch;
   margin: 0px;
   padding: 0px;
   background: #20202E;
   text-align: center;
-  font-family: 'Merriweather', Light 300;
+  font-family: "Merriweather", Light 300;
   line-height: 1.25em;
 }
 
 /* ---HEADER--- */
 /* The text highlight in the header is from Steven Roberts → https://codepen.io/matchboxhero/pen/XeEYyy */
 header {
-  font-family: 'Alike', cursive;
+  font-family: "Alike", cursive;
   color: white;
   font-size: 1.3rem;
   line-height: 2em;
@@ -31,34 +26,28 @@ header {
 .highlight {
   display: inline-block;
   color: white;
-  -webkit-transition: color 250ms, text-shadow 250ms;
   transition: color 250ms, text-shadow 250ms;
   text-decoration: none;
-  text-shadow: 0px 1px 0px white;
+  text-shadow: 0px 1px 0px rgb(255, 255, 255);
   position: relative;
   z-index: 0;
 }
-
 .highlight::after {
   position: absolute;
   z-index: -1;
   bottom: -1px;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  content: '';
+  transform: translateX(-50%);
+  content: "";
   width: 100%;
   height: 3px;
   background-color: #433BA6;
-  -webkit-transition: all 250ms;
   transition: all 250ms;
 }
-
 .highlight:hover {
   color: white;
   text-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.5);
 }
-
 .highlight:hover::after {
   height: 102.5%;
   width: 102.5%;
@@ -66,18 +55,11 @@ header {
 
 /* ---FORM--- */
 form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-self: center;
+  flex-direction: column;
   margin-bottom: 1.2rem;
-  width: 45%;
-  /* max/min values */
+  width: 45%; /* max/min values */
   min-width: 300px;
   border: 10px;
   border-radius: 0.5rem;
@@ -92,7 +74,7 @@ div {
 }
 
 .label {
-  font-family: 'Alike', cursive;
+  font-family: "Alike", cursive;
   font-size: 1rem;
 }
 
@@ -105,7 +87,6 @@ div {
   color: #20202E;
   background: #f4f4f4;
 }
-
 .input:focus {
   border: 2.5px solid #433BA6;
 }
@@ -120,7 +101,6 @@ div {
   background: #f4f4f4;
   cursor: pointer;
 }
-
 #dropdown:focus {
   border: 2.5px solid #433BA6;
 }
@@ -133,7 +113,6 @@ div {
   margin-bottom: 3px;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -208,12 +187,9 @@ div {
 }
 
 #checkboxes {
-  display: -ms-grid;
   display: grid;
-  grid-template: "cl cl cl cl" auto
- "t h c r" auto;
-  -ms-grid-columns: (auto, 4);
-      grid-template-columns: repeat(4, auto);
+  grid-template: "cl cl cl cl" auto "t h c r" auto;
+  grid-template-columns: repeat(4, auto);
 }
 
 .checkbox {
@@ -223,7 +199,6 @@ div {
   padding-bottom: 2px;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -266,7 +241,6 @@ div {
   height: 8px;
   border: solid #433BA6;
   border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -279,7 +253,6 @@ div {
   color: #111118;
   font-size: 0.85rem;
 }
-
 #comment:focus {
   border: 2.5px solid #433BA6;
 }
@@ -298,7 +271,6 @@ div {
   background-color: #433BA6;
   color: white;
 }
-
 #submit:hover {
   background-color: #363088;
 }
@@ -315,11 +287,9 @@ footer {
 a {
   color: white;
 }
-
 a:visited {
   color: white;
 }
-
 a:hover {
   color: #433BA6;
 }
@@ -328,13 +298,8 @@ a:hover {
 /* #Cheat */
 @media only screen and (max-width: 500px) {
   #checkboxes {
-    display: -ms-grid;
     display: grid;
-    grid-template: "cl cl" auto
- "t h" auto
- "c r" auto;
-    -ms-grid-columns: (auto, 2);
-        grid-template-columns: repeat(2, auto);
+    grid-template: "cl cl" auto "t h" auto "c r" auto;
+    grid-template-columns: repeat(2, auto);
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

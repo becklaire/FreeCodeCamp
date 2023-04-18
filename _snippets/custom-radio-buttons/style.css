@@ -1,0 +1,67 @@
+/* --- COLORS ---*/
+/* --- MAIN --- */
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #EBEBEB;
+  color: #20202E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 18px "Roboto";
+  line-height: 2;
+}
+
+#container {
+  padding: 20px 20px 4px 20px;
+  border: 0.5px solid #F1F2EB;
+  box-shadow: 2px 2px rgba(51, 51, 51, 0.2);
+  border-radius: 10px;
+  background: white;
+}
+#container p {
+  font: small-caps 900 1.563rem "Roboto";
+  margin: 0 0 10px 0;
+}
+
+/* ---RADIO--- */
+.list {
+  padding: 0 0 16px 0;
+}
+
+.radio-btn {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+.radio-btn:checked + .label { /* checked */
+  font-weight: 900;
+}
+.radio-btn:checked + .label::before {
+  margin-right: 0.8rem;
+  border: 0.45rem solid #FCA311;
+  background: white;
+}
+
+.label {
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.25s linear;
+}
+
+.label::before { /* dummy creation */
+  display: inline-block;
+  content: "";
+  height: 12px;
+  width: 12px;
+  margin-right: 0.45rem;
+  margin-bottom: -4px;
+  border: 0.45rem solid #20202E;
+  background: #EBEBEB;
+  border-radius: 50%;
+  transition: all 0.25s linear;
+}/*# sourceMappingURL=style.css.map */

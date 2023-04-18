@@ -8,6 +8,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Usual tags - SEO -->
+    <meta name="keywords" content="HTML, CSS, FCC, FreeCodeCamp">
+    <meta name="author" content="becklaire">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Links -->
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/aef52f1aa1.js" crossorigin="anonymous"></script>
@@ -22,8 +27,9 @@
     <main id="main-doc">
 
         <!-- NAV BAR -->
-        <nav id="nav-bar" class="nav-bar">
+        <nav id="navbar" class="navbar">
             <header class="header">
+                <!-- Img pratice-->
                 <img class="raspberry" src='https://www.hebergeur-image.com/upload/160.220.116.11-62eb7ac438906.png' />
             </header>
             <ul class="nav-list">
@@ -144,33 +150,33 @@
                         href="https://forums.raspberrypi.com/viewtopic.php?f=104&t=109064&p=750616#p810193">forum
                         post</a>.</p>
                 <p>Install the necessary software and run the calibration program as follows:</p>
-                <pre><code>
-                    sudo apt update<br>
-                    sudo apt install octave -y<br>
-					cd<br>
-					cp /usr/share/librtimulib-utils/RTEllipsoidFit ./ -a<br>
-					cd RTEllipsoidFit<br>
-					RTIMULibCal
+                <pre><code>sudo apt update
+                    sudo apt install octave -y
+                    cd
+                    cp /usr/share/librtimulib-utils/RTEllipsoidFit ./ -a
+                    cd RTEllipsoidFit
+                    RTIMULibCal
 				</code></pre>
                 <p>You will then see this menu:</p>
-                <pre><code>
-					Options are:<br>m - calibrate magnetometer with min/max<br>
-  				    e - calibrate magnetometer with ellipsoid (do min/max first)<br>
-				    a - calibrate accelerometers<br>
-  				    x - exit<br><br>
-					Enter option: _
+                <pre><code>Options are:
+                    m - calibrate magnetometer with min/max
+                    e - calibrate magnetometer with ellipsoid (do min/max first)
+                    a - calibrate accelerometers
+                    x - exit
+                    Enter option: _
 				</code></pre>
                 <p>Press lowercase <em>m</em>. The following message will then show; press any key to start.</p>
-                <pre><code>
-					Magnetometer min/max calibration<br>--------------------------------<br>
-    			    Waggle the IMU chip around, ensuring that all six axes<br>(+x, -x, +y, -y and +z, -z) go through their extrema.<br>
-    			    When all extrema have been achieved, enter 's' to save, 'r' to reset<br>or 'x' to abort and discard the data.<br>
-	    		    Press any key to start...
+                <pre><code>Magnetometer min/max calibration
+                    --------------------------------
+                    Waggle the IMU chip around, ensuring that all six axes
+                    (+x, -x, +y, -y and +z, -z) go through their extrema.
+                    When all extrema have been achieved, enter 's' to save, 'r' to reset
+                    or 'x' to abort and discard the data.
+                    Press any key to start...
 				</code></pre>
                 <p>After it starts, you will see something similar to this scrolling up the screen:</p>
-                <pre><code>
-                    Min x:  51.60  min y:  69.39  min z:  65.91<br>
- 					Max x:  53.15  max y:  70.97  max z:  67.97
+                <pre><code>Min x:  51.60  min y:  69.39  min z:  65.91
+                    Max x:  53.15  max y:  70.97  max z:  67.97
 				</code></pre>
                 <p>Focus on the two lines at the very bottom of the screen, as these are the most recently posted
                     measurements from the program. Now you have to move the Astro Pi around in every possible way you
@@ -186,9 +192,8 @@
                 <p>When you’re done, copy the resulting <em>RTIMULib.ini</em> to /etc/ and remove the local copy in
                     <em>~/.config/sense_hat/</em>:
                 </p>
-                <pre><code>
-					rm ~/.config/sense_hat/RTIMULib.ini<br>
- 					sudo cp RTIMULib.ini /etc
+                <pre><code>rm ~/.config/sense_hat/RTIMULib.ini
+                    sudo cp RTIMULib.ini /etc
 				</code></pre>
                 <p>You are now done.</p>
             </section>
@@ -197,21 +202,20 @@
                 <ol>
                     <li>
                         <p>Enable I2C0 and I2C1 by adding the following line to <em>/boot/config.txt</em>:</p>
-                        <pre><code>
-							dtparam=i2c_vc=on
-							dtparam=i2c_arm=on
+                        <pre><code>dtparam=i2c_vc=on
+                            dtparam=i2c_arm=on
 						</code></pre>
                     </li>
                     <li>
                         <p>Enter the following command to reboot:</p>
-                        <pre><code>sudo systemctl reboot</code></pre>
+                        <pre><code>sudo systemctl reboot
+                        </code></pre>
                     </li>
                     <li>
                         <p>Download and build the flash tool:</p>
-                        <pre><code>
-							git clone https://github.com/raspberrypi/hats.git
-							cd hats/eepromutils
-							make
+                        <pre><code>git clone https://github.com/raspberrypi/hats.git
+                            cd hats/eepromutils
+                            make
 						</code></pre>
                     </li>
                 </ol>
@@ -233,7 +237,9 @@
                 <ol>
                     <li>
                         <p>Download EEPROM settings and build the .eep binary:</p>
-                        <pre><code>wget https://github.com/raspberrypi/rpi-sense/raw/master/eeprom/eeprom_settings.txt -O sense_eeprom.txt<br>./eepmake sense_eeprom.txt sense.eep /boot/overlays/rpi-sense-overlay.dtb</code></pre>
+                        <pre><code>$ wget https://github.com/raspberrypi/rpi-sense/raw/master/eeprom/eeprom_settings.txt -O sense_eeprom.txt
+                            ./eepmake sense_eeprom.txt sense.eep /boot/overlays/rpi-sense-overlay.dtb
+                        </code></pre>
                     </li>
                     <li>
                         <p>Disable write protection:</p>
@@ -261,8 +267,8 @@
     <!-- FOOTER-->
     <footer id="footer">
         <a href="https://www.freecodecamp.org/" target="_blank"><i class="fab fa-free-code-camp fa-lg"></i></a>
-        <a href="https://github.com/lekurozifuru" target="_blank"><i class="fab fa-github fa-lg"></i></a>
-        <p>© 2022 Claire Becker</p>
+        <a href="https://github.com/becklaire" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+        <p>© 2023 Becklaire</p>
     </footer>
 </body>
 

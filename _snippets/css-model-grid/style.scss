@@ -1,0 +1,367 @@
+/* ---COLORS--- */
+$dark:#20202E;
+$white:#F5F5F5;
+$grey:#EBEBEB;
+$dgrey:#ADADAD;
+$ambre:#F0C300;
+$dambre:#CCA700;
+
+$green: #30ED12;
+$red: #BA0000;
+
+/* ---BODY--- */
+body{
+	background: $white;
+	color: $dark;
+	
+	margin: 0px;
+  padding	: 0px;
+	text-align: left;
+	
+	font: Light 16px 'Roboto';
+	line-height: 1;
+}
+
+/* ---TYPOGRAPHY--- */
+h1 {
+	font: bold 3.052rem 'Roboto Mono';
+	margin-bottom: 10px;
+}
+h2 {
+	font-size: 2.441rem;
+	margin-bottom: 10px;
+}
+h3 {
+	font-size: 1.953rem;
+	margin-bottom: 10px;
+}
+h4 {
+	font-size: 1.563rem;
+	margin-bottom: 10px;
+}
+h5 {
+	font-size: 1.25rem;
+	margin-bottom: 10px;
+}
+h6 {
+	font-size: 0.8rem;
+	margin-bottom: 10px;
+}
+/* Categories */ .cat { 
+	font: small-caps Regular 1.25rem 'Roboto Mono';
+	margin: 10px 0 10px 0;
+	color: $ambre;
+}
+
+/* ---MEDIA--- */
+.pal{
+	width: 350px;
+	height: 50px;
+}
+
+/* ---HEADER--- */
+#hTitle{text-align: center;}
+
+/* ---CONTAINER--- */
+main{
+	max-width: 1250px;
+	margin: 3em auto 0;
+	
+	display: grid;
+	grid-template-columns: repeat(5, fit-content(500px)) / repeat(4, 1fr);
+	grid-template-areas: 
+		"colors colors typo typo"
+		"buttons buttons typo typo"
+		"buttons buttons links links"
+		"inputs inputs inputs inputs"
+		"inputs inputs inputs inputs";
+  grid-gap: 0.75rem;
+	
+		> div{
+			padding: 0px 15px 5px 15px;
+			border: 0.5px solid #f1f2eb;
+			box-shadow: 2px 2px rgba(#333, 0.2);
+			border-radius: 10px;
+			background: white;
+		}
+}
+
+/* COLORS & TIPS */
+#bColors{
+	grid-area: colors;
+	display: grid;
+	grid-template-columns: auto 250px;
+	
+	#_pal{
+		display: grid;
+		grid-gap: 0.75rem;
+	}
+	
+	#__pal01, #__pal02, #__pal03, #__pal04, #__pal05 > p{
+			font-family: 'Roboto Mono';
+			line-height: 0;
+	}
+	
+	#_tips{
+		line-height: 2;
+	}
+	
+}
+
+/* TYPOGRAPHY */
+#bTypo {
+	grid-area: typo;
+	display: grid;
+	grid-template-columns: 66% 34%;
+	grid-template-areas: 
+		"_fonts _fonts"
+		"_hl _text";
+	grid-gap: 0.75rem;
+	
+	#dFonts{
+	grid-area: _fonts;
+		#fFamily {
+		display: grid;
+		grid-template-columns: 33% 33% 33%;
+		line-height: 1rem;
+		
+		.letters{font-size: 1.953rem;}
+		#_fBold{
+			font-weight: 900;
+			font-family: 'Roboto Mono';
+		}
+		#_fMedium{font-family: 'Roboto Mono';}
+		#_fThin{
+			font-weight: 100;
+			font-family: 'Roboto Mono';
+		}
+		}
+	}
+	
+	#dHeadlines{
+		grid-area: _hl;
+		line-height: 0.8rem;
+	}
+
+	#dText{
+		grid-area: _text;
+		#_text{line-height: 3;}
+	}
+}
+
+/* BUTTONS */
+#bButtons{
+	grid-area: buttons;
+	
+	#dButtons{
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-gap: 0.75rem;
+	}
+	
+	button{
+		font: small-caps 1.25rem 'Roboto Mono';
+		cursor: pointer;
+		width: 200px;
+		height: 2.5rem;
+		border-radius: 5px;
+		border: none;
+	}
+	
+	.bHovered{
+		background-color: $ambre;
+		color: white;
+	}
+	.bDisabled{background-color: $dgrey;}
+	.bAni01{
+		&:hover{
+			background-color: $ambre;
+			color: white;
+		}
+	}
+	.bAni02{
+		background-color: $ambre;
+		color: white;
+		&:hover{
+			background-color: $dambre;
+			color: white;		
+		}
+	}	
+}
+
+/* LINKS */
+#bLinks{
+	grid-area: links;
+	
+	#dLinks{
+		display: grid;
+		grid-template-columns: 33% 33% 33%;
+		line-height: 0.5rem;
+	}
+	
+	#_lFirst, #_lSecond, #_lThird > p{cursor: pointer;}
+	
+	/* _first_ */
+	#__f01{text-decoration: underline solid;}
+	#__f02{
+		color: $ambre;
+		text-decoration: underline solid;}
+	#__f03{
+		color: $dgrey;
+		text-decoration: underline solid;}
+	
+	/* _second_ */
+	#__s01{text-decoration: underline dotted;}
+	#__s02{
+		color: $ambre;
+		text-decoration: underline dotted;}
+	#__s03{text-decoration: underline solid;}
+	
+	/* [WIP] */
+	/* _third_ */	
+}
+
+/* INPUTS */
+#bInputs{
+	grid-area: inputs;
+	
+	#dInputs{
+	display: grid;
+	grid-template-columns: 33% 33% 35%;
+	grid-gap: 0.75rem;
+	
+		input[type="text"]{
+			width: 90%;
+			height: 25px;
+			border-radius: 0.3rem;
+			color: $dark;
+		}
+		.subcat{line-height: 1.5;}
+		.comment{font-size: 0.8rem;}
+		
+		#ni{border: 2px solid $dgrey;}
+		#ai{
+		border: 2.5px solid $ambre;
+		&::placeholder{
+			color:$dark;
+			opacity:1;
+		}
+		}
+		#di{
+		border: 2px solid $dgrey;
+		background:$grey;
+	}
+		#ri{
+		border: 2px solid $green;
+		+ .comment{color: $green;}
+	}
+		#wi{
+		border: 2px solid $red;
+		+ .comment{color: $red;}
+	}
+		#sel{
+		width: 91.5%;
+		height: 30px;
+		border: 1.2px solid $dgrey;
+		border-radius: 0.3rem;
+		color: $dark;
+	}
+		#ta{
+			width: 90%;
+			min-height: 75px;
+			max-height: 200px;
+			resize: vertical;
+		}
+	}
+}
+/* radio buttons*/
+.list{
+	padding: 0 0 16px 0;
+}
+.radio-btn {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	&:checked + .label { /* checked */
+		font-weight: 900;
+		&::before {
+			margin-right: 0.8rem;
+			border: 0.35rem solid $ambre;
+			background: white;
+		}
+	}
+}
+.label {
+	line-height: 1.5rem;
+	cursor: pointer;
+	transition: all 0.25s linear;
+}
+.label::before { /* dummy creation */
+	display: inline-block;
+	content: "";
+	height: 9px;
+	width: 9px;
+	margin-right: 0.45rem;
+	margin-bottom: -4px;
+	border: 0.35rem solid $dark;
+	background: $grey;
+	border-radius: 50%;
+	transition: all 0.25s linear;
+	}
+/* checkboxes*/
+.check{
+	padding: 0 0 16px 0;
+}
+.check-btn {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	&:checked + .prompt { /* checked */
+		font-weight: 900;
+		&::before {
+			margin-right: 0.8rem;
+			margin-left: 0.25rem;
+			padding-bottom: 3px;
+			
+  		width: 6px;
+  		height: 10px;
+  		border: solid $ambre;
+ 		 	border-width: 0 3px 3px 0;
+			
+  		-webkit-transform: rotate(45deg);
+  		-ms-transform: rotate(45deg);
+  		transform: rotate(45deg);
+			transition: all 0.15s linear;
+		}
+	}
+}
+.prompt {
+	line-height: 1.5rem;
+	cursor: pointer;
+	transition: all 0.15s linear;
+}
+.prompt::before { /* dummy creation */
+	display: inline-block;
+	content: "";
+	height: 12px;
+	width: 12px;
+	margin-right: 0.45rem;
+	margin-bottom: -1px;
+	border: 0.2rem solid $dark;
+	background: white;
+	transition: all 0.15s linear;
+}
+
+/* ---FOOTER--- */
+#fEop{
+	font-size: 0.8rem;
+	line-height: 6px;
+	padding: 3rem;
+	text-align: center;
+	
+	> a{
+		color:$dark;
+		&:visited{color: $dark;}
+		&:hover {color: $ambre;}	
+	}
+}

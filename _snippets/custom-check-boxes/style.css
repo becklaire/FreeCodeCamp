@@ -1,0 +1,72 @@
+/* --- COLORS ---*/
+/* --- MAIN --- */
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #EBEBEB;
+  color: #20202E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 18px "Roboto";
+  line-height: 2;
+}
+
+#container {
+  padding: 20px 20px 4px 20px;
+  border: 0.5px solid #F1F2EB;
+  box-shadow: 2px 2px rgba(51, 51, 51, 0.2);
+  border-radius: 10px;
+  background: white;
+}
+#container p {
+  font: small-caps 900 1.563rem "Roboto";
+  margin: 0 0 10px 0;
+}
+
+/* ---RADIO--- */
+.list {
+  padding: 0 0 16px 0;
+}
+
+.check-btn {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+.check-btn:checked + .label { /* checked */
+  font-weight: 900;
+}
+.check-btn:checked + .label::before {
+  margin-right: 0.8rem;
+  margin-left: 0.25rem;
+  padding-bottom: 3px;
+  width: 6px;
+  height: 10px;
+  border: solid #FCA311;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  transition: all 0.15s linear;
+}
+
+.label {
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.15s linear;
+}
+
+.label::before { /* dummy creation */
+  display: inline-block;
+  content: "";
+  height: 12px;
+  width: 12px;
+  margin-right: 0.45rem;
+  margin-bottom: -1px;
+  border: 0.2rem solid #20202E;
+  background: white;
+  transition: all 0.15s linear;
+}/*# sourceMappingURL=style.css.map */
