@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>FCC#3 - Technical Documentation</title>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Common SEO tags -->
+        <meta name="keywords" content="HTML, CSS, FCC, FreeCodeCamp">
+        <meta name="author" content="becklaire">
+        
+        <!-- Links -->
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/aef52f1aa1.js" crossorigin="anonymous"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Space+Mono&display=swap');        </style>
+        </style>
+
+    </head>
+
+    <body>
+        <main id="main-doc">
+
+            <!-- NAV BAR -->
+            <nav id="navbar">
+                <img class="raspberry" src='https://www.hebergeur-image.com/upload/160.220.116.11-62eb7ac438906.png' />
+                <header>Raspberry Pi Documentation</header>
+                <ul class="nav-list">
+                    <li><a href="#Sense_HAT_Technical_Documentation" class="nav-link">Introduction</a></li>
+                    <li><a href="#Introducing_the_Sense_HAT" class="nav-link">Introducing_the_Sense_HAT</a></li>
+                    <li><a href="#Installation" class="nav-link">Installation</a></li>
+                    <li><a href="#Getting_started" class="nav-link">Getting started</a></li>
+                    <ul class="sub-list">
+                        <li><a href="#Using_the_Sense_HAT_with_Python" class="nav-link">Using the Sense HAT with Python</a></li>
+                        <li><a href="#Using_the_Sense_HAT_with_C++" class="nav-link">Using the Sense HAT with C++</a></li>
+                    </ul>
+                    <li><a href="#Sense_HAT_Hardware" class="nav-link">Sense HAT Hardware</a></li>
+                    <ul class="sub-list">
+                        <li><a href="#LED_Matrix" class="nav-link">LED Matrix</a></li>
+                        <li><a href="#Joystick" class="nav-link">Joystick</a></li>
+                    </ul>
+                    <li><a href="#Hardware_Calibration" class="nav-link">Hardware Calibration</a></li>
+                    <li><a href="#Reading_and_writing_EEPROM_data" class="nav-link">Reading and writing EEPROM data</a></li>
+                    <ul class="sub-list">
+                        <li><a href="#Reading" class="nav-link">Reading</a></li>
+                        <li><a href="#Writing" class="nav-link">Writing</a></li>
+                    </ul> 
+                </ul>
+            </nav>
+
+            <!-- DOCUMENTATION -->
+            </section>
+            <section class="main-section" id="Sense_HAT_Technical_Documentation">
+                <header>Sense Hat Technical Documentation</header>
+                <p>This page is a reproduction of <b>Raspberry Pi</b>'s <a target="_blank" href="https://www.raspberrypi.com/documentation/accessories/sense-hat.html">Sense HAT documentation</a>.
+                <br>The use of this content is purely for personal purposes, within the third project of <a href="https://www.freecodecamp.org/" target="_blank">freecodecamp</a>'s Responsive Web Design curriculum.
+                <br>Please refer directly to the owner website for more information.</p>
+            </section>
+            <section class="main-section" id="Introducing_the_Sense_HAT">
+                <header>Introducing the Sense HAT</header>
+                <div>The <a target="_blank" href="https://www.raspberrypi.com/products/sense-hat/">Raspberry Pi Sense HAT</a> is an add-on board that gives your Raspberry Pi an array of sensing capabilities. The on-board sensors allow you to monitor pressure, humidity, temperature, colour, orientation, and movement. The bright 8×8 RGB LED matrix allows you to visualise data from the sensors, and the five-button joystick lets users interact with your projects.</div>
+                <div><p>The Sense HAT was originally developed for use on the International Space Station, as part of the educational Astro Pi programme run by the <a target="_blank" href="https://raspberrypi.org/">Raspberry Pi Foundation</a> in partnership with the <a target="_blank" href="https://www.esa.int/">European Space Agency</a>. It is well suited to many projects that require position, motion, orientation, or environmental sensing. The Sense HAT is powered by the Raspberry Pi computer to which it is connected.<br>
+                An officially supported <a target="_blank" href="https://www.raspberrypi.com/documentation/accessories/sense-hat.html#using-the-sense-hat-with-python">Python library</a> provides access to all of the on-board sensors, the LED matrix, and the joystick. The Sense HAT is compatible with any Raspberry Pi computer with a 40-pin GPIO header.</p></div>
+            </section>
+            <section class="main-section" id="Installation">
+                <header>Installation</header>
+                <p>In order to work correctly, the Sense HAT requires an up-to-date kernel, I2C to be enabled, and a few libraries to get started.</p>
+                <ol>
+                    <li><p>Ensure your APT package list is up-to-date:</p>
+                        <pre><code>sudo apt update</code></pre></li>
+                    <li><p>Next, install the sense-hat package which will ensure the kernel is up-to-date, enable I2C,
+                            and install the necessary libraries and programs:</p>
+                        <pre><code>sudo apt install sense-hat</code></pre></li>
+                    <li><p>Finally, a reboot may be required if I2C was disabled or the kernel was not up-to-date prior
+                            to the install:</p>
+                        <pre><code>sudo reboot</code></pre></li>
+                </ol>
+            </section>
+            <section class="main-section" id="Getting_started">
+                <header>Getting started</header>
+                <p>After installation, example code can be found under <em>/usr/src/sense-hat/examples</em>.</p>
+                <p>You can find more information on how to use the Sense HAT in the Raspberry Pi Press book <a target="_blank" href="https://github.com/raspberrypipress/released-pdfs/raw/main/experiment-with-the-sense-hat.pdf">Experiment with the Sense HAT</a>. Written by The Raspberry Pi Foundation’s Education Team, it is part of the MagPi Essentials series published by Raspberry Pi Press. The book covers the background of the Astro Pi project, and walks you through how to make use of all the Sense HAT features using the <a target="_blank" href="https://www.raspberrypi.com/documentation/accessories/sense-hat.html#using-the-sense-hat-with-python">Python library</a>.</p>
+                <p>You can download this book as a PDF file for free, it has been released under a Creative Commons <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a> 3.0 Unported (CC BY NC-SA) licence.</p>
+                <section class="sub-section" id="Using_the_Sense_HAT_with_Python">
+                    <header>Using the Sense HAT with Python</header>
+                    <p><em>sense-hat</em> is the officially supported library for the Sense HAT; it provides access to all of the on-board sensors and the LED matrix.</p>
+                    <p>Complete documentation can be found at <a target="_blank" href="https://pythonhosted.org/sense-hat/">pythonhosted.org/sense-hat</a>.</p>
+                </section>
+                <section class="sub-section" id="Using_the_Sense_HAT_with_C++">
+                    <header>Using the Sense HAT with C++</header>
+                    <p><a target="_blank" href="https://github.com/RPi-Distro/RTIMULib">RTIMULib</a> is a C++ and Python library that makes it easy to use 9-dof and 10-dof IMUs with embedded Linux systems. A pre-calibrated settings file is provided in <em>/etc/RTIMULib.ini</em>, which is also copied and used by <em>sense-hat</em>. The included examples look for <em>RTIMULib.ini</em> in the current working directory, so you may wish to copy the file there to get more accurate data.</p>
+                    <p>The RTIMULibDrive11 example comes pre-compiled to help ensure everything works as intended. It can be launched by running <em>RTIMULibDrive11</em> and closed by pressing <em>Ctrl C</em>.</p>
+                    <p class="callout">Note<br>
+                        The C/C++ examples can be compiled by running <em>make</em> in the appropriate directory. 
+                    </p>
+                </section>
+            </section>
+            <section class="main-section" id="Sense_HAT_Hardware">
+                <header>Sense HAT Hardware</header>
+                <p>The Sense HAT has an 8×8 RGB LED matrix and a five-button joystick, and includes the following sensors:</p>
+                <ul>
+                    <li>Gyroscope</li>
+                    <li>Accelerometer</li>
+                    <li>Magnetometer</li>
+                    <li>Temperature</li>
+                    <li>Barometric pressure</li>
+                    <li>Humidity</li>
+                    <li>Colour and brightness</li>
+                </ul>
+                <p>Schematics and mechanical drawings for the Sense HAT are available for download.</p>
+                <ul>
+                    <li><a target="_blank" href="https://datasheets.raspberrypi.com/sense-hat/sense-hat-schematics.pdf">Sense HAT schematics</a>.</li>
+                    <li><a target="_blank" href="https://datasheets.raspberrypi.com/sense-hat/sense-hat-mechanical-drawing.pdf">Sense HAT mechanical drawings</a>.</li>
+                </ul>
+                <section class="sub-section" id="LED_Matrix">
+                    <header>LED Matrix</header>
+                    <p>The LED matrix is an RGB565 <a target="_blank" href="https://www.kernel.org/doc/Documentation/fb/framebuffer.txt">framebuffer</a> with the id "RPi-Sense FB". The appropriate device node can be written to as a standard file or mmap-ed. The included 'snake' example shows how to access the framebuffer.</p>
+                </section>
+                <section class="sub-section" id="Joystick">
+                    <header>Joystick</header>
+                    <p>The joystick comes up as an input event device named "Raspberry Pi Sense HAT Joystick", mapped to the arrow keys and <em>Enter</em>. It should be supported by any library which is capable of handling inputs, or directly through the <a target="_blank" href="https://www.kernel.org/doc/Documentation/input/input.txt">evdev interface</a>. Suitable libraries include SDL, <a target="_blank" href="https://www.pygame.org/docs/">pygame</a> and <a target="_blank" href="https://python-evdev.readthedocs.io/en/latest/">python-evdev</a>. The included 'snake' example shows how to access the joystick directly.</p>
+            </section>
+            </section>
+            <section class="main-section" id="Hardware_Calibration">
+                <header>Hardware Calibration</header>
+                <p>Install the necessary software and run the calibration program as follows:</p>
+                <pre><code>sudo apt update
+                    sudo apt install octave -y
+                    cd
+                    cp /usr/share/librtimulib-utils/RTEllipsoidFit ./ -a
+                    cd RTEllipsoidFit
+                    RTIMULibCal
+                </code></pre>
+                <p>You will then see this menu:</p>
+                <pre><code>Options are:
+                    m - calibrate magnetometer with min/max
+                    e - calibrate magnetometer with ellipsoid (do min/max first)
+                    a - calibrate accelerometers
+                    x - exit
+                    Enter option: _
+                </code></pre>
+                <p>Press lowercase <em>m</em>. The following message will then show; press any key to start.</p>
+                <pre><code>Magnetometer min/max calibration
+                    --------------------------------
+                    Waggle the IMU chip around, ensuring that all six axes
+                    (+x, -x, +y, -y and +z, -z) go through their extrema.
+                    When all extrema have been achieved, enter 's' to save, 'r' to reset
+                    or 'x' to abort and discard the data.
+                    Press any key to start...
+                </code></pre>
+                <p>After it starts, you will see something similar to this scrolling up the screen:</p>
+                <pre><code>Min x:  51.60  min y:  69.39  min z:  65.91
+                    Max x:  53.15  max y:  70.97  max z:  67.97
+                </code></pre>
+                <p>Focus on the two lines at the very bottom of the screen, as these are the most recently posted measurements from the program.<br>
+                    Now you have to move the Astro Pi around in every possible way you can think of. It helps if you unplug all non-essential cables to avoid clutter.</p>
+                <p>Try and get a complete circle in each of the pitch, roll and yaw axes. Take care not to accidentally eject the SD card while doing this. Spend a few minutes moving the Astro Pi, and stop when you find that the numbers are not changing anymore.</p>
+                <p>Now press lowercase <em>s</em> then lowercase <em>x</em> to exit the program. If you run the <em>ls</em> command now, you’ll see a new <em>RTIMULib.ini</em> file has been created.</p>
+                <p>In addition to those steps, you can also do the ellipsoid fit by performing the steps above, but pressing <em>e</em> instead of <em>m</em>.</p>
+                <p>When you’re done, copy the resulting <em>RTIMULib.ini</em> to /etc/ and remove the local copy in <em>~/.config/sense_hat/</em>:</p>
+                <pre><code>rm ~/.config/sense_hat/RTIMULib.ini
+                    sudo cp RTIMULib.ini /etc
+                </code></pre>
+            </section>
+            <section class="main-section" id="Reading_and_writing_EEPROM_data">
+                <header>Reading and writing EEPROM data</header>
+                <ol>
+                    <li>
+                        <p>Enable I2C0 and I2C1 by adding the following line to <em>/boot/config.txt</em>:</p>
+                        <pre><code>dtparam=i2c_vc=on
+                            dtparam=i2c_arm=on
+						</code></pre>
+                    </li>
+                    <li>
+                        <p>Enter the following command to reboot:</p>
+                        <pre><code>sudo systemctl reboot
+                        </code></pre>
+                    </li>
+                    <li>
+                        <p>Download and build the flash tool:</p>
+                        <pre><code>git clone https://github.com/raspberrypi/hats.git
+                            cd hats/eepromutils
+                            make
+						</code></pre>
+                    </li>
+                </ol>
+                <p class="callout">NOTE:<br>These steps may not work on Raspberry Pi 2 Model B Rev 1.0 and Raspberry Pi 3 Model B boards. The firmware will take control of I2C0, causing the ID pins to be configured as inputs.</p>
+                 
+                <section class="sub-section" id="Reading">
+                    <header>Reading</header>
+                    <ol><li>EEPROM data can be read with the following command:
+                            <pre><code>sudo ./eepflash.sh -f=sense_read.eep -t=24c32 -r</code></pre>
+                    </li></ol>
+                </section>
+                <section class="sub-section" id="Writing">
+                    <header>Writing</header>
+                    <ol>
+                        <li><p>Download EEPROM settings and build the .eep binary:</p>
+                            <pre><code>$ wget https://github.com/raspberrypi/rpi-sense/raw/master/eeprom/eeprom_settings.txt -O sense_eeprom.txt
+                                ./eepmake sense_eeprom.txt sense.eep /boot/overlays/rpi-sense-overlay.dtb
+                            </code></pre>
+                        </li>
+                        <li>
+                            <p>Disable write protection:</p>
+                            <pre><code>i2cset -y -f 1 0x46 0xf3 1</code></pre>
+                        </li>
+                        <li>
+                            <p>Write the EEPROM data:</p>
+                            <pre><code>sudo ./eepflash.sh -f=sense.eep -t=24c32 -w</code></pre>
+                        </li>
+                        <li>
+                            <p>Re-enable write protection:</p>
+                            <pre><code>i2cset -y -f 1 0x46 0xf3 0</code></pre>
+                        </li></ol>
+                        <p class="callout">WARNING:<br>Please note that this operation is potentially dangerous, and is not needed for the everyday user. The steps above are provided for debugging purposes only. If an error occurs, the HAT may no longer be automatically detected.</p>
+                    </section>
+            </section>
+        </main>
+
+        <footer id="footer">
+            <a href="https://www.freecodecamp.org/" target="_blank"><i class="fab fa-free-code-camp fa-lg"></i></a>
+            <a href="https://github.com/becklaire" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+            <p>© 2023 becklaire</p>
+        </footer>
+
+    </body>
+
+</html>
