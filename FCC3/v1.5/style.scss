@@ -68,7 +68,9 @@ nav > header{
 section.sub-section > header{font-size: 1.563rem;}
 
 // Bullet lists
-ul > li {
+
+//Archtung only on title to do
+.nav-list li{
     list-style: none;
     text-align: left;
 }
@@ -165,10 +167,35 @@ footer{
     text-align: center;
     background-color: var(--text-color);
     color: var(--nav-background);
-    padding: 1% 0 0.05% 0;
+    padding: 20px 0 1px 0;
 }
 
 /*-----------------------------------------------
 6)		MEDIA
 -----------------------------------------------*/
-// To do
+/* For mobile phones: */
+@media only screen and (max-width: 768px) {
+    #main-doc{
+        flex-flow: column;
+        margin: auto;
+    }
+
+    #navbar {
+        position:inherit;
+        
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+
+        width: auto;
+        height: auto;
+        padding-top: 5%;
+        text-align: center;
+    }
+
+    nav > header{display: none;}
+
+    img{padding-right: 25px;}
+
+    #documentation {margin-left: 0;}
+}

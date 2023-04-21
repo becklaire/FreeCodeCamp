@@ -27,7 +27,7 @@
                 <img class="raspberry" src='https://www.hebergeur-image.com/upload/160.220.116.11-62eb7ac438906.png' />
                 <header>Raspberry Pi Documentation</header>
                 <ul class="nav-list">
-                    <li><a href="#Sense_HAT_Technical_Documentation" class="nav-link">Introduction</a></li>
+                    <li><a href="#Sense_HAT_Technical_Documentation" class="nav-link">Sense HAT Technical Documentation</a></li>
                     <li><a href="#Introducing_the_Sense_HAT" class="nav-link">Introducing the Sense HAT</a></li>
                     <li><a href="#Installation" class="nav-link">Installation</a></li>
                     <li><a href="#Getting_started" class="nav-link">Getting started</a></li>
@@ -53,7 +53,7 @@
             <div id="documentation">  
                 <section class="main-section" id="Sense_HAT_Technical_Documentation">
                     <header>Sense Hat Technical Documentation</header>
-                    <p>This page is a reproduction of <b>Raspberry Pi</b>'s <a target="_blank" href="https://www.raspberrypi.com/documentation/accessories/sense-hat.html">Sense HAT documentation</a>.
+                    <p>This page is a "personal reproduction" of <b>Raspberry Pi</b>'s <a target="_blank" href="https://www.raspberrypi.com/documentation/accessories/sense-hat.html">Sense HAT documentation</a>.
                     <br>The use of this content is purely for personal purposes, within the third project of <a href="https://www.freecodecamp.org/" target="_blank">freecodecamp</a>'s Responsive Web Design curriculum.
                     <br>Please refer directly to the owner website for more information.</p>
                 </section>
@@ -82,12 +82,12 @@
                     <p>After installation, example code can be found under <em>/usr/src/sense-hat/examples</em>.</p>
                     <p>You can find more information on how to use the Sense HAT in the Raspberry Pi Press book <a target="_blank" href="https://github.com/raspberrypipress/released-pdfs/raw/main/experiment-with-the-sense-hat.pdf">Experiment with the Sense HAT</a>. Written by The Raspberry Pi Foundation’s Education Team, it is part of the MagPi Essentials series published by Raspberry Pi Press. The book covers the background of the Astro Pi project, and walks you through how to make use of all the Sense HAT features using the <a target="_blank" href="https://www.raspberrypi.com/documentation/accessories/sense-hat.html#using-the-sense-hat-with-python">Python library</a>.</p>
                     <p>You can download this book as a PDF file for free, it has been released under a Creative Commons <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a> 3.0 Unported (CC BY NC-SA) licence.</p>
-                    <section class="sub-section" id="Using_the_Sense_HAT_with_Python">
+                    <section class="main-section sub-section" id="Using_the_Sense_HAT_with_Python">
                         <header>Using the Sense HAT with Python</header>
                         <p><em>sense-hat</em> is the officially supported library for the Sense HAT; it provides access to all of the on-board sensors and the LED matrix.</p>
                         <p>Complete documentation can be found at <a target="_blank" href="https://pythonhosted.org/sense-hat/">pythonhosted.org/sense-hat</a>.</p>
                     </section>
-                    <section class="sub-section" id="Using_the_Sense_HAT_with_C++">
+                    <section class="main-section sub-section" id="Using_the_Sense_HAT_with_C++">
                         <header>Using the Sense HAT with C++</header>
                         <p><a target="_blank" href="https://github.com/RPi-Distro/RTIMULib">RTIMULib</a> is a C++ and Python library that makes it easy to use 9-dof and 10-dof IMUs with embedded Linux systems. A pre-calibrated settings file is provided in <em>/etc/RTIMULib.ini</em>, which is also copied and used by <em>sense-hat</em>. The included examples look for <em>RTIMULib.ini</em> in the current working directory, so you may wish to copy the file there to get more accurate data.</p>
                         <p>The RTIMULibDrive11 example comes pre-compiled to help ensure everything works as intended. It can be launched by running <em>RTIMULibDrive11</em> and closed by pressing <em>Ctrl C</em>.</p>
@@ -113,11 +113,11 @@
                         <li><a target="_blank" href="https://datasheets.raspberrypi.com/sense-hat/sense-hat-schematics.pdf">Sense HAT schematics</a>.</li>
                         <li><a target="_blank" href="https://datasheets.raspberrypi.com/sense-hat/sense-hat-mechanical-drawing.pdf">Sense HAT mechanical drawings</a>.</li>
                     </ul>
-                    <section class="sub-section" id="LED_Matrix">
+                    <section class="main-section" id="LED_Matrix">
                         <header>LED Matrix</header>
                         <p>The LED matrix is an RGB565 <a target="_blank" href="https://www.kernel.org/doc/Documentation/fb/framebuffer.txt">framebuffer</a> with the id "RPi-Sense FB". The appropriate device node can be written to as a standard file or mmap-ed. The included 'snake' example shows how to access the framebuffer.</p>
                     </section>
-                    <section class="sub-section" id="Joystick">
+                    <section class="main-section" id="Joystick">
                         <header>Joystick</header>
                         <p>The joystick comes up as an input event device named "Raspberry Pi Sense HAT Joystick", mapped to the arrow keys and <em>Enter</em>. It should be supported by any library which is capable of handling inputs, or directly through the <a target="_blank" href="https://www.kernel.org/doc/Documentation/input/input.txt">evdev interface</a>. Suitable libraries include SDL, <a target="_blank" href="https://www.pygame.org/docs/">pygame</a> and <a target="_blank" href="https://python-evdev.readthedocs.io/en/latest/">python-evdev</a>. The included 'snake' example shows how to access the joystick directly.</p>
                 </section>
@@ -187,13 +187,13 @@
                     </ol>
                     <p class="callout">NOTE:<br>These steps may not work on Raspberry Pi 2 Model B Rev 1.0 and Raspberry Pi 3 Model B boards. The firmware will take control of I2C0, causing the ID pins to be configured as inputs.</p>
                     
-                    <section class="sub-section" id="Reading">
+                    <section class="main-section sub-section" id="Reading">
                         <header>Reading</header>
                         <ol><li>EEPROM data can be read with the following command:
                                 <pre><code>sudo ./eepflash.sh -f=sense_read.eep -t=24c32 -r</code></pre>
                         </li></ol>
                     </section>
-                    <section class="sub-section" id="Writing">
+                    <section class="main-section sub-section" id="Writing">
                         <header>Writing</header>
                         <ol>
                             <li><p>Download EEPROM settings and build the .eep binary:</p>
