@@ -1,0 +1,147 @@
+/* --- COLORS --- */
+$background-color: #20202E;
+$text-color: #F2F2F2;
+$first-accent-color: #F3F3F3;
+$second-accent-color: #F3F3F3;
+$third-accent-color: #F3F3F3;
+
+/* --- HTML --- */
+html{
+	background-color: $text-color;
+	color: $background-color;
+	
+	margin: 0;
+    padding: 0;
+	
+	font: Light 16px 'Roboto Mono';
+	line-height: 1; //change em
+}
+
+/* --- TYPOGRAPHY --- */
+//Headers definition
+
+/* --- MEDIA --- */
+@media screen and (min-width: 600px){
+    //Resizing
+}
+
+/* --- HEADER --- */
+#header{
+}
+.nav-link{
+	color: $background-color;	
+	text-decoration: none;
+}
+
+/* --- MAIN --- */
+.container{
+  width: 100%;
+}
+
+/* HERO */
+#hero{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("https://zupimages.net/up/21/05/ihzc.jpg");
+	height: 100%;
+	border-radius: 20px;
+	
+	/* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+	
+	#hero-text{
+  	top: 50%;
+  	left: 50%;
+		padding: 125px 0;
+		line-height: 1.2rem;
+		color: $blue;
+		em{
+			font-style: normal;
+			text-decoration: underline solid $yellow;
+		}
+	}
+}
+button{
+		width: 150px;
+		height: 2rem;
+		border-radius: 100px;
+		border: none;
+		margin-top: 1.2rem;
+		cursor: pointer;
+		font-weight: bold;
+		background-color: $blue;
+		color: white;
+		&:hover{
+			background-color: $dblue;
+		}
+}
+
+/* ABOUT */
+#about{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin: 50px 0;
+}
+#about-video{
+	iframe{
+		height: 275px;
+		width: 400px;
+	}
+}
+#about-text{ /* Small screen: need to go down*/
+	text-align: left;
+	max-width: 500px;
+	em {
+		font-style: normal;
+		color: $yellow;
+	}
+}
+
+/* FEATURES */
+#features{
+	#features-attribute{
+		display: flex;
+		/*justify-content: space-between;*/
+		margin: 50px 0;
+	}
+	.attribute{
+		max-width: 500px;
+    margin: 0 auto;
+		> img{
+			max-width: 1000px;
+			height: 500px;
+		}
+	}
+}
+
+
+/* PRICING */
+#pricing{
+	#pricing-option{ /* BORDERS */
+		display: flex;
+		justify-content: space-between;
+		margin: 50px 0;
+	}
+	.option{
+		max-width: 350px;
+    margin: 0 auto;
+	}
+}
+
+
+/* CONTACT */
+#contact{
+	margin: 50px 0;
+}
+
+/* --- FOOTER --- */
+#footer{
+	margin: 25px 0;
+	> a{
+		color:$background-color;
+		&:visited{color: $background-color;}
+		&:hover {color: $blue;}	
+	}
+}
