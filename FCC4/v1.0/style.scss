@@ -1,36 +1,86 @@
 /* --- COLORS --- */
-$background-color: #20202E;
-$text-color: #F2F2F2;
-$first-accent-color: #F3F3F3;
-$second-accent-color: #F3F3F3;
-$third-accent-color: #F3F3F3;
+$dark: #20202E;
+$grey: #EBEBEB;
+$white: #FFF;
+$blue: #0172a2;
+$dblue: #01557A;
+$yellow: #FED253;
 
 /* --- HTML --- */
 html{
-	background-color: $text-color;
-	color: $background-color;
+	background-color: $white;
+	color: $dark;
 	
 	margin: 0;
-    padding: 0;
+  padding: 2px 5px;
+	/*text-align: center;*/
 	
 	font: Light 16px 'Roboto Mono';
-	line-height: 1; //change em
+	line-height: 1;
+}
+footer, section{ /* spacing */
+	text-align: center;
 }
 
 /* --- TYPOGRAPHY --- */
-//Headers definition
+h1{
+	font: bold 3.052rem 'Roboto Mono';
+	margin-bottom: 10px;
+}
+h2 {
+	font-size: 2.441rem;
+	margin-bottom: 10px;
+}
+h3 {
+	font-size: 1.953rem;
+	margin-bottom: 10px;
+}
+h4 {
+	font-size: 1.563rem;
+	margin-bottom: 10px;
+}
+h5 {
+	font-size: 1.25rem;
+	margin-bottom: 10px;
+}
+h6 {
+	font-size: 0.8rem;
+	margin-bottom: 10px;
+}
 
 /* --- MEDIA --- */
-@media screen and (min-width: 600px){
-    //Resizing
+@media screen and (min-width: 600px){ /* TODO: mobile and desktop support*/
+	img{
+		max-height: 54px;
+	}
 }
 
 /* --- HEADER --- */
-/*#header{
-	
-}*/
+#header{
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	margin: 0 0 5px 0;
+	width: 100%;
+	font: 1rem 'Roboto Mono';
+	background: $white;
+	display: flex;
+	justify-content: space-between;
+  align-items: center;
+	ul{
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		padding: 2px;
+		> li{
+			padding: 0 20px;
+			justify-content: right;
+			/*border: 0.9px solid blue;*/
+		}
+	}
+}
 .nav-link{
-	color: $background-color;	
+	color: $dark;	
 	text-decoration: none;
 }
 
@@ -141,8 +191,8 @@ button{
 #footer{
 	margin: 25px 0;
 	> a{
-		color:$background-color;
-		&:visited{color: $background-color;}
+		color:$dark;
+		&:visited{color: $dark;}
 		&:hover {color: $blue;}	
 	}
 }

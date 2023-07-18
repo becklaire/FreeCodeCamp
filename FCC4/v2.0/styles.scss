@@ -1,0 +1,42 @@
+/* --- COLORS --- */
+$background-color: #F2F2F2;
+$text-color: #20202E;
+$first-accent-color: brown; //TBD
+$second-accent-color: red; //TBD
+$third-accent-color: yellow; //TBD
+
+/* --- HTML --- */
+html{
+	background-color: $background-color;
+	color: $text-color;
+	
+	margin: 0;
+    padding: 0;
+	
+	font-style: Light 16px 'Roboto Mono';
+	line-height: 1em;
+}
+
+/* --- TYPOGRAPHY --- */
+//Headers definition
+
+/* --- MEDIA --- */
+@media screen and (min-width: 600px){
+    //Resizing
+}
+
+/* --- HEADER --- */
+
+/* --- MAIN --- */
+
+/* HERO */
+
+/* ABOUT */
+
+/* FEATURES */
+
+/* PRICING */
+
+/* CONTACT */
+
+/* --- FOOTER --- */
